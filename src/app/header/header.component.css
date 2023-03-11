@@ -1,0 +1,8 @@
+.head_wrapper{
+ width: 100%;
+ height: 80px;
+}
+.head_padd,.head_content,.logo_wrapper,.navbar_wrapper{
+ width: 100%;
+ height: 100%;
+}
