@@ -1,73 +1,94 @@
 <div class="footer">
     <div class="footer_wrapper">
         <div class="footer_container">
-            <div class="footerContactUs my-4">
-                <div class="footerContactUs_container col-6 footer_padd">
-                    <div class="footerForm leftSection">
-                        <div class="logo">
-                            <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/AS_sample_logo.png" alt="LOGO">
+          <div class="footerContactUs my-4">
+              <div class="footerContactUs_container col-12 footer_padd">
+                    <div class="footerForm">
+                      <div class="logo">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/2/23/AS_sample_logo.png" alt="LOGO">
+                      </div>
+                      <div class="contactAddressSection d-flex flex-column flex-md-row">
+                        <div class="leftSection col-12 col-md-6 pl-0">
+                          <div class="leftSectionPadd col-12 col-md-8 p-0">
+                            <div><h3 class="my-3">CONTACT US</h3></div>
+                            <div><h5 class="my-3">Request Quote!</h5></div>
+                            <div class="formContainer">
+                                <div class="register-form">
+                                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                                  
+                                      <div class="form-group">
+                                        <label>Username</label>
+                                        <input
+                                          type="text"
+                                          formControlName="username"
+                                          class="form-control" maxlength="50"
+                                          [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+                                        />
+                                        <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+                                          <div *ngIf="f['username'].errors['required']">Username is required</div>
+                                        </div>
+                                      </div>
+                                  
+                                      <div class="form-group">
+                                        <label>Email</label>
+                                        <input
+                                          type="text"
+                                          formControlName="email"
+                                          class="form-control" maxlength="50"
+                                          [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                                        />
+                                        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                          <div *ngIf="f['email'].errors['required']">Email is required</div>
+                                          <div *ngIf="f['email'].errors['email']">Email is invalid</div>
+                                        </div>
+                                      </div>
+    
+                                      <div class="form-group">
+                                        <label>Phone number: </label>
+                                        <input type="text" formControlName="mob" class="form-control mb-2" maxlength="10"
+                                        [ngClass]="{ 'is-invalid': submitted && f['mob'].invalid }">
+                                        <div *ngIf="submitted && f['mob'].invalid" class="invalid-feedback">
+                                          <div *ngIf="f['mob'].errors?.['required']">Please enter mobile number</div>
+                                          <div *ngIf="f['mob'].errors?.['pattern']">Mobile number is not 10 digit</div>
+                                        </div>
+                                      </div>
+    
+                                      <div class="form-group">
+                                        <label>Explain your requirements</label>
+                                        <textarea formControlName="requirements" class="form-control mb-2"></textarea>
+                                      </div>
+                                  
+                                      <div class="form-group">
+                                        <button type="submit" class="btn btn-danger" [disabled]="form.invalid">Submit</button>
+                                        <!-- <button
+                                          type="button"
+                                          (click)="onReset()"
+                                          class="btn btn-secondary float-right"
+                                        >
+                                          Reset
+                                        </button> -->
+                                      </div>
+                                    </form>
+                                </div>
+                            </div>
+                          </div>  
                         </div>
-                        <div><h3 class="my-3">CONTACT US</h3></div>
-                        <div><h5 class="my-3">Request Quote!</h5></div>
-                        <div class="formContainer">
-                            <div class="register-form">
-                                <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                              
-                                  <div class="form-group">
-                                    <label>Username</label>
-                                    <input
-                                      type="text"
-                                      formControlName="username"
-                                      class="form-control" maxlength="50"
-                                      [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
-                                    />
-                                    <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
-                                      <div *ngIf="f['username'].errors['required']">Username is required</div>
-                                    </div>
-                                  </div>
-                              
-                                  <div class="form-group">
-                                    <label>Email</label>
-                                    <input
-                                      type="text"
-                                      formControlName="email"
-                                      class="form-control" maxlength="50"
-                                      [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
-                                    />
-                                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
-                                      <div *ngIf="f['email'].errors['required']">Email is required</div>
-                                      <div *ngIf="f['email'].errors['email']">Email is invalid</div>
-                                    </div>
-                                  </div>
-
-                                  <div class="form-group">
-                                    <label>Phone number: </label>
-                                    <input type="text" formControlName="mob" class="form-control mb-2" maxlength="10"
-                                    [ngClass]="{ 'is-invalid': submitted && f['mob'].invalid }">
-                                    <div *ngIf="submitted && f['mob'].invalid" class="invalid-feedback">
-                                      <div *ngIf="f['mob'].errors?.['required']">Please enter mobile number</div>
-                                      <div *ngIf="f['mob'].errors?.['pattern']">Mobile number is not 10 digit</div>
-                                    </div>
-                                  </div>
-
-                                  <div class="form-group">
-                                    <label>Explain your requirements</label>
-                                    <textarea formControlName="requirements" class="form-control mb-2"></textarea>
-                                  </div>
-                              
-                                  <div class="form-group">
-                                    <button type="submit" class="btn btn-danger">Submit</button>
-                                    <button
-                                      type="button"
-                                      (click)="onReset()"
-                                      class="btn btn-secondary float-right"
-                                    >
-                                      Reset
-                                    </button>
-                                  </div>
-                                </form>
+                        <div class="rightSection col-12 col-md-6 pl-0 pr-md-0 ml-md-5 pl-md-5">
+                          <div class="col-12 col-md-8 p-0 d-flex flex-column">
+                            <div><h3 class="my-3">REACH US</h3></div>
+                            <div class="address_container p-0">
+                              <div class="addressDetails">
+                                118, Parameshwaran Layout Road,
+                                Pappanaickenpalayam, Coimbatore - 641037.<br>
+                                <span class="d-inline-block my-4">
+                                  <span class="d-none d-md-inline">Tel :</span> <span>9894045454 , 9898980072.</span><br>
+                                  <span class="d-none d-md-inline">Email :</span><span>kandhankitchen@gmail.com</span>
+                                </span>
                               </div>
+                            </div>
+                          </div>
                         </div>
+                      </div>  
                     </div>
                 </div>
             </div>
