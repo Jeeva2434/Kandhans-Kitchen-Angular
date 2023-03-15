@@ -21,5 +21,42 @@
 }
 body{
     width: 100%;
-    height: 100vh;
+    height: 100%;
+    overflow-y: auto;
 }
+@media screen and (max-width: 768px) {
+    .nav-menu{
+     background: #fff;
+     flex-direction: column;
+     /* justify-content: center; */
+     padding-top: 180px;
+     opacity: 0;
+     position: absolute;
+     top: 0; right: 0; bottom: -100%; left: 0;
+     transform: translateY(-100%);
+     text-align: center;
+    }
+    .menu-active #head_wrapper .nav-menu{
+     width: 100%;
+     height: 100vh;
+     z-index: 999;
+    }
+    .menu-active #head_wrapper .nav-menu{
+       transform: translateY(0%);  
+       opacity: 1;
+     }
+   }
+   .menu-active #head_wrapper #menu-toggler .hamburger-line-top {
+    top: 50%;
+    transform: rotate(45deg) translateY(-50%);
+  }
+  
+  .menu-active #head_wrapper #menu-toggler .hamburger-line-middle {
+    left: 50%;
+    opacity: 0;
+    width: 0;
+  }
+  .menu-active #head_wrapper #menu-toggler .hamburger-line-bottom {
+    bottom: 50%;
+    transform: rotate(-45deg) translateY(50%);
+  }

@@ -6,20 +6,13 @@
  width: 100%;
  height: 100%;
 } */
-/* Extra */
-/* --primary: #fff;
-$secondary: #ccc;
-$ternary: #272727;
-$dark: #444444; */
 
 body {
   background: #ccc;
   color: #272727;
   font-size: 14px;
   margin: 0;
-
 }
-
 .logo {
   max-width: 200px;
 }
@@ -71,7 +64,7 @@ body {
       top: 3px;
     }
     
-    .menu-active #menu-toggler .hamburger-line-top {
+    .menu-active #head_wrapper #menu-toggler .hamburger-line-top {
       top: 50%;
       transform: rotate(45deg) translateY(-50%);
     }
@@ -81,7 +74,7 @@ body {
       transform: translateY(-50%);
     }
     
-    .menu-active #menu-toggler .hamburger-line-middle {
+    .menu-active #head_wrapper #menu-toggler .hamburger-line-middle {
       left: 50%;
       opacity: 0;
       width: 0;
@@ -91,7 +84,7 @@ body {
       bottom: 3px;
     }
 
-    .menu-active #menu-toggler .hamburger-line-bottom {
+    .menu-active #head_wrapper #menu-toggler .hamburger-line-bottom {
       bottom: 50%;
       transform: rotate(-45deg) translateY(50%);
     }
@@ -107,18 +100,19 @@ body {
    .nav-menu{
     background: #fff;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
+    /* padding-top: 180px; */
     opacity: 0;
     position: absolute;
     top: 0; right: 0; bottom: -100%; left: 0;
     transform: translateY(-100%);
     text-align: center;
    }
-   #head_wrapper.menu-active .nav-menu{
+   .menu-active #head_wrapper .nav-menu{
     width: 100%;
-    height: 100vh;
+    height: 100%;
    }
-   .menu-active .nav-menu{
+   .menu-active #head_wrapper .nav-menu{
       transform: translateY(0%);  
       opacity: 1;
     }
@@ -145,20 +139,27 @@ body {
     }
 
 .sub-nav {
-    border: 1px solid #ccc;
+    /* border: 1px solid #ccc; */
     display: none;
     position: absolute;
-    background-color: #fff;
-    padding: 5px 5px;
+    padding: 15px 15px;
     list-style: none; 
     width: 230px;  
+    background-color: #faf9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(220, 218, 218, 0.891);
+    z-index: 200;
+}
+.sub-nav li{
+  padding: 6px 0;
 } 
     @media screen and (max-width: 768px) {
      .sub-nav{
       position: relative;
       width: 100%;
       display: none;
-      background-color: rgba(0, 0, 0, 0.20);
+      background-color: #fff;
+      box-shadow: none;
       box-sizing: border-box;
      } 
     }
@@ -171,4 +172,18 @@ body {
 
 .sub-nav:hover {
     display:block;
-  }
+  }  
+
+.sub-nav__link{
+  cursor: pointer;
+}
+.nav__link span{
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  margin-left: 4px;
+}
+.callNumber{
+  font-size: 18px;
+  margin-left: 18px;
+}
