@@ -1,0 +1,42 @@
+.menu_container{
+ width: 100%;
+ height: auto;
+}
+.img_wrapper{
+ width: 100%;
+ height: 100%;
+ border: 1px solid black;
+}
+.img_wrapper img{
+ width: 100%;
+ height: 100%;
+}
+.menu_list{
+ width: 100%;
+}
+.menu_sub_head{
+ width: 48%;
+ display: flex;
+ flex-direction: column;
+ cursor: pointer;
+ color: white;
+ font-weight: 600;
+ font-size: 25px;
+ transition: position .8s ease-in; 
+}
+.menu_sub_head:hover{
+ position: relative;
+ top: -10px;
+}
+.menu_banner{
+ display: grid;
+ place-items: center;
+}
+.itemTitle{
+ text-align: center;
+}
+@media screen and (max-width: 768px)  {
+ .menu_sub_head{
+   width:100%;
+ }
+}

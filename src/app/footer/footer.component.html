@@ -14,13 +14,23 @@
                             <div><h5 class="my-3">Request Quote!</h5></div>
                             <div class="formContainer">
                                 <div class="register-form">
-                                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-                                  
+                                  <!-- <form action="https://formsubmit.co/el/yalura?subject='customer'?message='some+information+here'" method="POST">
+                                    <input type="text" name="name" required>
+                                    <input type="hidden" name="_token" value="N9oItbWkHBRyd3pYaGiApPpNHty7ZiwaACXleJgV">
+                                    <input type="email" name="email" required>
+                                    <input type="hidden" name="subject" value="New submission!">
+                                    <input type="hidden" name="message" value="New submission!">
+                                    <input type="hidden" name="_captcha" value="false">
+                                    <button type="submit">Send</button>
+                                  </form> -->
+                                    <form [formGroup]="form" action="https://formsubmit.co/smasher2434@gmail.com" method="POST">
+                                      <input type="hidden" name="subject" value="New submission!">
+                                      <input type="hidden" name="_captcha" value="false">
                                       <div class="form-group">
                                         <label>Username</label>
                                         <input
                                           type="text"
-                                          formControlName="username"
+                                          formControlName="username" name="customerName"
                                           class="form-control" maxlength="50"
                                           [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
                                         />
@@ -33,7 +43,7 @@
                                         <label>Email</label>
                                         <input
                                           type="text"
-                                          formControlName="email"
+                                          formControlName="email" name="email"
                                           class="form-control" maxlength="50"
                                           [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
                                         />
@@ -45,7 +55,7 @@
     
                                       <div class="form-group">
                                         <label>Phone number: </label>
-                                        <input type="text" formControlName="mob" class="form-control mb-2" maxlength="10"
+                                        <input type="text" formControlName="mob" name="phoneNumber" class="form-control mb-2" maxlength="10"
                                         [ngClass]="{ 'is-invalid': submitted && f['mob'].invalid }">
                                         <div *ngIf="submitted && f['mob'].invalid" class="invalid-feedback">
                                           <div *ngIf="f['mob'].errors?.['required']">Please enter mobile number</div>
@@ -55,20 +65,20 @@
     
                                       <div class="form-group">
                                         <label>Explain your requirements</label>
-                                        <textarea formControlName="requirements" class="form-control mb-2"></textarea>
+                                        <textarea formControlName="requirements" name="requirements" class="form-control mb-2"></textarea>
                                       </div>
                                   
                                       <div class="form-group">
                                         <button type="submit" class="btn btn-danger" [disabled]="form.invalid">Submit</button>
-                                        <!-- <button
+                                        <button
                                           type="button"
                                           (click)="onReset()"
                                           class="btn btn-secondary float-right"
                                         >
                                           Reset
-                                        </button> -->
+                                        </button>
                                       </div>
-                                    </form>
+                                    </form> 
                                 </div>
                             </div>
                           </div>  

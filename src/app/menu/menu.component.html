@@ -1,1 +1,16 @@
-<p>menu works!</p>
+<div class="menu_container my-4 my-md-0 px-3 pb-4">
+ <div class="menu_container_padd px-md-4 mx-md-4">
+  <div class="menu_content">
+   <div class="menu_banner px-md-4 mx-md-4">
+    <div class="col-md-8 col-12 my-5 menu_list d-flex flex-md-wrap flex-column flex-md-row align-items-md-center justify-content-md-between">
+     <div class="menu_sub_head my-3" routerLink="{{item.route}}" *ngFor="let item of menuListItems">
+       <div class="img_wrapper">
+        <img src="{{item.img}}">
+       </div>
+       <div class="itemTitle text-center bg-warning py-4">{{item.name}}</div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>

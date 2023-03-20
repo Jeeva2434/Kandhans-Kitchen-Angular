@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-
+import { HttpClient } from '@angular/common/http';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
@@ -16,7 +16,7 @@ export class FooterComponent implements OnInit {
   });
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder) {}
+  constructor(private formBuilder: FormBuilder,private http: HttpClient) {}
 
   ngOnInit(): void {
     this.form = this.formBuilder.group(

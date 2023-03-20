@@ -12,4 +12,26 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  menuListItems = [
+    {
+      name:'Beakfast',
+      route:'../breakfast',
+      img:'assets/images/breakfast-g475ae764b_1920.jpg'
+    },
+    {
+      name:'Lunch',
+      route:'../breakfast',
+      img:'assets/images/breakfast-g475ae764b_1920.jpg'
+    },
+    {
+      name:'Dinner',
+      route:'../breakfast',
+      img:'assets/images/breakfast-g475ae764b_1920.jpg'
+    },
+    {
+      name:'Sweets',
+      route:'../breakfast',
+      img:'assets/images/breakfast-g475ae764b_1920.jpg'
+    }
+  ]
 }
